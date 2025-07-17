@@ -4,3 +4,6 @@ const Dias_Semana = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sáb
 
 // Exportar las constantes
 export { PI, IVA, Dias_Semana };
+
+const descuento = 0.1
+export {descuento};
