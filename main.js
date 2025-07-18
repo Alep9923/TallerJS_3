@@ -2,7 +2,7 @@
 
 import { PI, IVA, Dias_Semana, descuento } from './constantes.js';
 import { sumar, restar, multiplicar, area_Circulo } from './operaciones-matematicas.js';
-import { calcular_Total, aplicar_impuestos, aplicar_descuentos} from './operaciones-matematicas.js';
+import { calcular_Total, aplicar_impuestos, aplicar_descuentos, aplicarDescuentoPorRol} from './operaciones-matematicas.js';
 import { crearUsuario } from './usuarios.js';
 import { roles } from './constantesUsuarios.js';
 
@@ -57,3 +57,24 @@ let usuario2 = crearUsuario("María", roles.USER);
 
 console.log("Usuario 1:", usuario1);
 console.log("Usuario 2:", usuario2);
+
+// Ejercicio 5
+const compraUsario1 = Array(4).fill({ precio: 25, cantidad: 1 }); // Linea consultada para crear un array de 4 elementos con el mismo objeto
+const compraUsario2 = Array(3).fill({ precio: 50, cantidad: 1 });
+
+const totalUsuario1 = calcular_Total(compraUsario1);
+const totalUsuario2 = calcular_Total(compraUsario2);
+
+const totalConIVAUsuario1 = aplicar_impuestos(totalUsuario1);
+const totalConIVAUsuario2 = aplicar_impuestos(totalUsuario2);
+
+const totalConDescuentoUsuario1 = aplicarDescuentoPorRol(totalConIVAUsuario1, usuario1);
+const totalConDescuentoUsuario2 = aplicarDescuentoPorRol(totalConIVAUsuario2, usuario2);
+
+console.log("Total sin IVA para Usuario 1 (Admin): $" + totalUsuario1.toFixed(2));
+console.log("Total con IVA para Usuario 1 (Admin): $" + totalConIVAUsuario1.toFixed(2));
+console.log("Total con Descuento para Usuario 1 (Admin): $" + totalConDescuentoUsuario1.toFixed(2));
+
+console.log("Total sin IVA para Usuario 2 (User): $" + totalUsuario2.toFixed(2));
+console.log("Total con IVA para Usuario 2 (User): $" + totalConIVAUsuario2.toFixed(2));
+console.log("Total con Descuento para Usuario 2 (User): $" + totalConDescuentoUsuario2.toFixed(2));
