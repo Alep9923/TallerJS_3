@@ -2,9 +2,9 @@
 
 import { PI, IVA, Dias_Semana, descuento } from './constantes.js';
 import { sumar, restar, multiplicar, area_Circulo } from './operaciones-matematicas.js';
-import { calcular_Total, aplicar_impuestos, aplicar_descuentos, aplicarDescuentoPorRol} from './operaciones-matematicas.js';
+import { calcular_Total, aplicar_impuestos, aplicar_descuentos} from './operaciones-matematicas.js';
 import { crearUsuario } from './usuarios.js';
-import { roles } from './usuariosConstantes.js';
+import { roles } from './constantesUsuarios.js';
 
 
 // Ejercicio 1

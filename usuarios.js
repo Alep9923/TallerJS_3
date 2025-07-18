@@ -1,4 +1,4 @@
-import { roles } from "./usuariosConstantes";
+import { roles } from "./constantesUsuarios.js";
 
 export function crearUsuario(nombre, rol){
     if (rol !== roles.ADMIN && rol !== roles.USER) {
@@ -8,6 +8,6 @@ export function crearUsuario(nombre, rol){
     return {
         nombre: nombre,
         rol: rol,
-        fechaRegistro: new Date(),
+        fechaRegistro: new Date().toLocaleDateString(), //  Linea consultada para obtener la fecha actual en formato local
     }
 }
