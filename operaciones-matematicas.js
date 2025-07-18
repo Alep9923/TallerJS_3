@@ -1,4 +1,4 @@
-import {PI} from './constantes.js';
+import { PI, IVA, descuento} from './constantes.js';
 
 export function sumar(a, b) {
     return a + b;
@@ -12,7 +12,7 @@ export function multiplicar (a,b){
     return a * b;
 }
 
-export function area_Circulo(radio, PI){
+export function area_Circulo(radio){
     return PI * radio * radio;
 }
 
@@ -26,11 +26,11 @@ export function calcular_Total(inventario) {
   return total;
 }
 
-export function aplicar_impuestos (total, IVA){
+export function aplicar_impuestos (total){
     return total * (1 + IVA)
 
 }
 
-export function aplicar_descuentos (total, descuento){
-    return total * (1 - descuento)
+export function aplicar_descuentos (total){
+    return total * (1- descuento)
 }
