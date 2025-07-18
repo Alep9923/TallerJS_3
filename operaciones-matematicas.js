@@ -34,3 +34,12 @@ export function aplicar_impuestos (total){
 export function aplicar_descuentos (total){
     return total * (1- descuento)
 }
+
+export function aplicarDescuentoPorRol (total, usuario){
+    if (usuario.rol === 'admin') {
+        return total * (1 - (descuento * 2));
+    } else if (usuario.rol === 'user') {
+        return total * (1 - descuento);
+    }
+    return total;
+}

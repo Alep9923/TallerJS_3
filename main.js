@@ -2,7 +2,9 @@
 
 import { PI, IVA, Dias_Semana, descuento } from './constantes.js';
 import { sumar, restar, multiplicar, area_Circulo } from './operaciones-matematicas.js';
-import { calcular_Total, aplicar_impuestos, aplicar_descuentos} from './operaciones-matematicas.js';
+import { calcular_Total, aplicar_impuestos, aplicar_descuentos, aplicarDescuentoPorRol} from './operaciones-matematicas.js';
+import { crearUsuario } from './usuarios.js';
+import { roles } from './usuariosConstantes.js';
 
 
 // Ejercicio 1
@@ -47,3 +49,11 @@ console.log("El total de su compra con el impuesto del IVA al 10% es de: $" + to
 
 const totalConDescuento = aplicar_descuentos(totalConIVA, descuento);
 console.log("El total de su compra con el descuento aplicado es de: $" + totalConDescuento.toFixed(2));
+
+
+// Ejercicio 4
+let usuario1 = crearUsuario("Alejandro", roles.ADMIN);
+let usuario2 = crearUsuario("María", roles.USER);
+
+console.log("Usuario 1:", usuario1);
+console.log("Usuario 2:", usuario2);
